@@ -1,3 +1,5 @@
-<p>
-  product-detail works!
-</p>
+<ng-container *ngIf='product !== null'>
+  <h1>{{product.Name}} - {{product.Id}}</h1>
+  <p>{{product.Manufacturer}}</p>
+  <p>link - <a [href]="product.OfficialUrl">{{product.OfficialUrl}}</a></p>
+</ng-container>
