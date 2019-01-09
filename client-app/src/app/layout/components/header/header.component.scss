@@ -1,0 +1,27 @@
+button.hamburger {
+    margin-right:20px;
+    width:50px;
+
+    mat-icon {
+        font-size:40px;
+        line-height:40px;
+    }
+}
+
+.header {
+    mat-toolbar-row {
+        justify-content: space-between;
+    }
+}
+
+.header-right, .header-left {
+    display:flex;
+
+    .site-link {
+        color:white;
+        text-decoration: None;
+        font-size:28px;
+        position: relative;
+        top:5px;
+    }    
+}

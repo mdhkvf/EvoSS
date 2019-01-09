@@ -1,3 +1,22 @@
-<p>
-  header works!
-</p>
+<mat-toolbar color="primary" class="fixed-header" class="header">
+  <mat-toolbar-row>
+    <div class="header-left">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class='hamburger'>
+          <mat-icon [inline]='true'>list</mat-icon>
+        </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+
+      <a class='site-link' href='/'>
+        EvoSS
+      </a>
+    </div>
+
+    <div class='header-right'>
+      <p>search here</p>
+      <p>account here</p>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

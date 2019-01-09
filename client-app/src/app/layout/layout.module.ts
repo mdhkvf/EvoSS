@@ -7,7 +7,12 @@ import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-me
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
+MatIconModule
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, LeftNavComponent, HamburgerMenuComponent, HomePageComponent, NotFoundComponent],
   imports: [
@@ -15,7 +20,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RouterModule.forChild([
       { path: '', component: HomePageComponent },
       { path: '**', component: NotFoundComponent }
-    ])
+    ]),
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule
   ],
   exports: [
     HomePageComponent,
