@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private productApiEndpoint = 'http://evoss.daakon.com/api/products';
+  private productApiEndpoint = 'http://evoss.daakon.com/api/products/';
 
   constructor(private http: HttpClient) { }
 
   public GetProduct(productId: number): Observable<IProduct> {
-    return this.http.get<IProduct>(this.productApiEndpoint);
+    return this.http.get<IProduct>(this.productApiEndpoint + productId);
   }
+
+  public GetProducts(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(this.productApiEndpoint);
+  }  
 }
