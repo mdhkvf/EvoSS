@@ -26,3 +26,12 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
   $router->put('products/{id}', ['uses' => 'ProductController@update']);
 });
+
+$router->get('/', function() use ($router) {
+    return view('home', ['home' => '']);
+});
+
+$router->get('/{any:.*}', function ($any) use ($router) {
+  //
+	return view('home', ['home' => '']);
+});
