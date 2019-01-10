@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { SearchModule } from '../search/search.module';
 
 MatIconModule
 @NgModule({
@@ -21,6 +22,7 @@ MatIconModule
       { path: '', component: HomePageComponent },
       { path: '**', component: NotFoundComponent }
     ]),
+    SearchModule,
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,

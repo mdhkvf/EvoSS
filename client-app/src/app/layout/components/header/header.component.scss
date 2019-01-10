@@ -23,5 +23,9 @@ button.hamburger {
         font-size:28px;
         position: relative;
         top:5px;
+    }
+
+    app-search-bar {
+        min-width: 300px;
     }    
 }
