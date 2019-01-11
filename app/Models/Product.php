@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-
+    protected $table = 'Products';
     /**
      * The attributes that are mass assignable.
      *
@@ -22,4 +22,8 @@ class Product extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function concerns(){
+        return $this->hasMany('App\Models\Concern');
+    }
 }
