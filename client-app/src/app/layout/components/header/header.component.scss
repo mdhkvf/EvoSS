@@ -1,3 +1,5 @@
+@import "../../../shared/stylesheets/layout.scss";
+
 button.hamburger {
     margin-right:20px;
     width:50px;
@@ -9,13 +11,53 @@ button.hamburger {
 }
 
 .header {
+    height: 110px;
+
+    @include md {
+        height: 64px;
+    }
+
     mat-toolbar-row {
         justify-content: space-between;
+
+        height: 110px;
+        @include md {
+            height: 64px;
+        }
     }
+
+    mat-grid-list {
+        width: 100%;
+    }    
 }
 
 .header-right, .header-left {
     display:flex;
+
+    width: 100%;
+    @include md {
+        width: auto;
+    }    
+}
+
+.header-left {
+    position: relative;
+    left: auto;
+    
+    @include md {
+        position: absolute;
+        left: 0;
+    }
+
+    .hamburger {
+        position: absolute;
+        left: 0;
+
+        @include md {
+            position: relative;
+            left: auto;
+        }        
+    }
 
     .site-link {
         color:white;
@@ -23,9 +65,28 @@ button.hamburger {
         font-size:28px;
         position: relative;
         top:5px;
-    }
+        margin-left: auto;
+        margin-right: auto;
+
+        @include md {
+            margin-left: 0;
+            margin-right: 0;
+        }           
+    }  
+}
+
+.header-right {
+    position: absolute;
+    right: 0;
+
+
 
     app-search-bar {
-        min-width: 300px;
-    }    
+        width: 90%;
+
+        @include md {
+            width: auto;
+        }
+    }
+
 }
