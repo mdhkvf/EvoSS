@@ -1,3 +1,12 @@
-<p>
-  account-icon works!
-</p>
+<div class='account-icon'>
+  <div class='account-icon-image' [matMenuTriggerFor]='accountMenu'>
+    <img src='https://pixel.nymag.com/imgs/daily/vulture/2017/02/07/07-john-wick-2-2.w250.h250.jpg' />
+  </div>
+</div>
+
+<mat-menu #accountMenu='matMenu'>
+  <button mat-menu-item>Account Detail</button>
+  <button mat-menu-item>My Products</button>
+  <button mat-menu-item>My Groups</button>
+  <button mat-menu-item>Logout</button> 
+</mat-menu>

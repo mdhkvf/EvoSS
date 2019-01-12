@@ -12,6 +12,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchModule } from '../search/search.module';
+import { AccountModule } from '../account/account.module';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 MatIconModule
 @NgModule({
@@ -23,10 +25,12 @@ MatIconModule
       { path: '**', component: NotFoundComponent }
     ]),
     SearchModule,
+    AccountModule,
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatGridListModule
   ],
   exports: [
     HomePageComponent,

@@ -4,9 +4,8 @@
 
 .search-bar {
     position: relative;
-    top: 4px;
-
-    min-width: 250px;
+    top: 8px;
+    margin-right:20px;
 
     input {
         border: 1px;
@@ -17,10 +16,12 @@
         padding-top: 5px;
         padding-left: 6px;
         padding-right: 50px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     button {
-        height: 40px;
+        height: 32px;
         position: absolute;
         right: 0;
         top: 0;
@@ -28,7 +29,7 @@
 
         mat-icon {
             position: relative;
-            top: -6px;
+            top: -8px;
             left: -6px;
             color:black;
             font-size:32px;

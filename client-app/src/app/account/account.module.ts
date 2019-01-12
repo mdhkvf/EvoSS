@@ -4,6 +4,8 @@ import { AccountDetailComponent } from './components/account-detail/account-deta
 import { AccountIconComponent } from './components/account-icon/account-icon.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [AccountDetailComponent, AccountIconComponent, LoginComponent],
@@ -12,7 +14,8 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       { path: 'login', component: LoginComponent },
       { path: 'account-detail', component: AccountDetailComponent }
-    ])
+    ]),
+    MatMenuModule,
   ],
   exports: [
     AccountDetailComponent,

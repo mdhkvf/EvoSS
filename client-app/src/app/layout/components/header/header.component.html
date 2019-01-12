@@ -1,23 +1,28 @@
 <mat-toolbar color="primary" class="fixed-header" class="header">
   <mat-toolbar-row>
-    <div class="header-left">
-      <button mat-icon-button [matMenuTriggerFor]="menu" class='hamburger'>
-          <mat-icon [inline]='true'>list</mat-icon>
-        </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
-      </mat-menu>
+    <mat-grid-list [cols]="numCols" rowHeight="50px">
+      <mat-grid-tile [colspan]="headerLeftCol" rowspan="1">
+        <div class="header-left">
+          <button mat-icon-button [matMenuTriggerFor]="menu" class='hamburger'>
+              <mat-icon [inline]='true'>list</mat-icon>
+            </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
 
-      <a class='site-link' href='/'>
-        EvoSS
-      </a>
-    </div>
-
-    <div class='header-right'>
-      <app-search-bar></app-search-bar>
-
-      <p>account here!</p>
-    </div>
+          <a class='site-link' href='/'>
+            EvoSS
+          </a>
+        </div>
+      </mat-grid-tile>
+      
+      <mat-grid-tile [colspan]="headerRightCol" rowspan="1">
+        <div class='header-right'>
+          <app-search-bar></app-search-bar>
+          <app-account-icon></app-account-icon>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../../services/account.service';
+import { IAccount } from '../../interfaces/iaccount';
 
 @Component({
   selector: 'app-account-icon',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-icon.component.scss']
 })
 export class AccountIconComponent implements OnInit {
+  public account: IAccount = null;
 
-  constructor() { }
+  constructor(
+    private accountService: AccountService
+  ) { }
 
   ngOnInit() {
+    this.account = this.accountService.getAccountDetail();
   }
 
 }
