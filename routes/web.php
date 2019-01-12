@@ -16,15 +16,15 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-  $router->get('products',  ['uses' => 'ProductController@showAllProducts']);
+	$router->get('products',  ['uses' => 'ProductController@index']);
 
-  $router->get('products/{id}', ['uses' => 'ProductController@showOneProduct']);
+	$router->get('products/{id}', ['uses' => 'ProductController@show']);
 
-  $router->post('products', ['uses' => 'ProductController@create']);
+	$router->post('products', ['uses' => 'ProductController@create']);
 
-  $router->delete('products/{id}', ['uses' => 'ProductController@delete']);
+	$router->delete('products/{id}', ['uses' => 'ProductController@delete']);
 
-  $router->put('products/{id}', ['uses' => 'ProductController@update']);
+  	$router->put('products/{id}', ['uses' => 'ProductController@update']);
 });
 
 $router->get('/', function() use ($router) {
