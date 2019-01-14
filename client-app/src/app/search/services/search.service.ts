@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
+import { IProduct } from 'src/app/product/interfaces/iproduct';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ProductsArrayPayload } from '../../product/payloads/products.payload'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
+  private searchResultsApiEndpoint = 'http://evoss.daakon.com/api/products/';
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   public getSearchSuggestions(query: string): string[] {
     //TODO implement real logic
@@ -24,5 +31,9 @@ export class SearchService {
     }
 
     return rtnList;
+  }
+
+  public getSearchResults(query: string): Observable<ProductsArrayPayload> {
+    return this.http.get<ProductsArrayPayload>(this.searchResultsApiEndpoint);
   }
 }

@@ -1,0 +1,10 @@
+@import './shared/stylesheets/layout.scss';
+
+.content-body {
+    width: 100%;
+    margin: auto;
+
+    @include md {
+        width: 88%;
+    }
+}

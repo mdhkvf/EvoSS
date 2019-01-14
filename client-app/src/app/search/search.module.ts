@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductModule } from '../product/product.module';
 
 @NgModule({
   declarations: [SearchResultsComponent, SearchBarComponent, TagSearchComponent],
@@ -27,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatMenuModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ProductModule
   ],
   exports: [
     SearchBarComponent,

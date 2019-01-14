@@ -2,4 +2,14 @@
   <h1>{{product.Name}} - {{product.Id}}</h1>
   <p>{{product.Manufacturer}}</p>
   <p>link - <a [href]="product.OfficialUrl">{{product.OfficialUrl}}</a></p>
+
+  <img src="{{product.ImageUrl}}" style="max-height:250px; max-width:250px;"/>
 </ng-container>
+
+<br><br><br>
+
+<div style="max-width:250px;">
+  <app-product-card [product]="product"> 
+
+  </app-product-card>
+</div>
