@@ -1,6 +1,7 @@
 @import '../../../shared/stylesheets/layout.scss';
 
 mat-card {
+    height: 400px;
     padding: 20px 16px;
 
     @include lg {
