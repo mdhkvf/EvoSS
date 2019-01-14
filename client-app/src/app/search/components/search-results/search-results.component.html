@@ -3,3 +3,9 @@
 </p>
 
 <p>searching for {{searchQuery}}</p>
+
+<ng-container *ngIf="searchResults">
+  <div *ngFor="let myProduct of searchResults" class='product-card'>
+    <app-product-card [product]="myProduct"></app-product-card>
+  </div>
+</ng-container>

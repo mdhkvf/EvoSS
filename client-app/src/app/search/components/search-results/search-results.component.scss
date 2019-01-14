@@ -1,0 +1,22 @@
+@import '../../../shared/stylesheets/layout.scss';
+
+.product-card {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 46%;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box
+    }
+
+    @include sm {
+        width: 31%;           
+    }
+
+    @include lg {
+        width: 23%;     
+    }
+
+}

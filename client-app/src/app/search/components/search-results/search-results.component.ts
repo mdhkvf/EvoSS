@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IProduct } from 'src/app/product/interfaces/iproduct';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search-results',
@@ -8,10 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SearchResultsComponent implements OnInit {
   public searchQuery: string = null;
+  public searchResults: IProduct[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private searchService: SearchService
     ) { }
 
   ngOnInit() {
@@ -19,6 +23,10 @@ export class SearchResultsComponent implements OnInit {
 
     this.router.events.subscribe((val) =>{
       this.searchQuery = this.activatedRoute.snapshot.params['query'];
-    })
+    });
+
+    this.searchService.getSearchResults(this.searchQuery).subscribe(
+      results => this.searchResults = results.data
+    );    
   }
 }
