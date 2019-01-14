@@ -20,7 +20,8 @@ class ProductController extends Controller
         if(!$product){
             return $this->error("The product with {$id} doesn't exist", 404);
         }
-        return $this->success($product, 200);
+
+        return $this->success(collect([$product]), 200);
     }
 
     public function create(Request $request)
